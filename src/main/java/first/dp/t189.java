@@ -1,4 +1,4 @@
-package first.dp.bag;
+package first.dp;
 
 public class t189 {
     public int rob(int[] nums) {
