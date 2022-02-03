@@ -19,7 +19,7 @@ public class PostOrder {
             }
         }
         Collections.reverse(list);
-        return list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        return list;
     }
 
 }

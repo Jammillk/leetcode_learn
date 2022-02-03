@@ -16,12 +16,17 @@ public class CommonOrder {
         node4.right = node2;
         commonOrder.inorder(root5);
     }
+
+    /**
+     *
+     */
     private List<Integer> inorder(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         if (root != null) {
             stack.push(root);
         }
+        /*顺序变更的地方*/
         while (!stack.isEmpty()){
             TreeNode node = stack.pop();
             if (node != null){
