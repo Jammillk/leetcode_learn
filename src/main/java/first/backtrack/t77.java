@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class t77 {
-    private void ddfs(int n, int k, int begin, List<Integer> list){
-        if (k  == 0){
+    private void ddfs(int n, int k, int begin, List<Integer> list) {
+        if (k == 0) {
             res.add(new ArrayList<>(list));
-            return ;
+            return;
         }
-        if (begin > n - k + 1){
-            return ;
+        if (begin > n - k + 1) {
+            return;
         }
         // 不选
-        ddfs(n, k , begin + 1, list);
+        ddfs(n, k, begin + 1, list);
 
         // 选
         list.add(begin);
@@ -22,21 +22,21 @@ public class t77 {
     }
 
 
-
     List<List<Integer>> res = new ArrayList<>();
+
     public List<List<Integer>> combine(int n, int k) {
         dfs(n, k, 1, new ArrayList<>());
         return res;
     }
 
     private void dfs(int n, int k, int begin, List<Integer> list) {
-        if (k == list.size()){
+        if (k == list.size()) {
             res.add(new ArrayList<>(list));
-            return ;
+            return;
         }
-        for(int i = begin;i <= n;i++){
+        for (int i = begin; i <= n - (k - list.size()) + 1; i++) {
             list.add(i);
-            dfs(n, k - 1, i + 1, list);
+            dfs(n, k, i + 1, list);
             list.remove(list.size() - 1);
         }
     }
