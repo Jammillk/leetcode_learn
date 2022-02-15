@@ -12,14 +12,13 @@ public class t491 {
         return res;
     }
 
-    int[] used = new int[201];
 
     private void backtrack(int[] nums, int startIndex) {
         if (path.size() >= 2) {
             res.add(new ArrayList<>(path));
         }
+        int[] used = new int[201];
         for (int i = startIndex; i < nums.length; i++) {
-
             if (!path.isEmpty() && path.get(path.size() - 1) > nums[i]
                     || used[nums[i] + 100] == 1) {
                 continue;
